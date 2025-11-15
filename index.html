@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym website</title>
+    <link rel="stylesheet" href="gym.css">
+    <script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = form.querySelector('input[placeholder="Enter your name"]').value;
+    const age = form.querySelector('input[placeholder="Enter your Age"]').value;
+    const gender = form.querySelector('input[placeholder="Enter your Gender"]').value;
+    const locality = form.querySelector('input[placeholder="Enter your Locality"]').value;
+
+    if (!name || !age || !gender || !locality) {
+        alert("Please fill in all the fields before submitting.");
+        return;
+    }
+
+    if (isNaN(age)) {
+        alert("Please enter a valid number for Age.");
+        return;
+    }
+
+    alert(`Thank you ${name} for joining Harry's Fitness! We will contact you soon.`);
+    window.location.href = "transaction.html";
+});
+</script>
+
+    <style>
+        body{
+            background-image: url("gympicss.jpeg");
+        }
+       .btn{
+        color: white;
+        background-color: black;
+       justify-content: space-between;
+        padding: 4px 14px;
+        font-size: 21px;
+        cursor: pointer;
+        
+       }
+       .btn a{
+        text-decoration: none;
+        color: white;
+        
+       }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="Gym-Logo-Graphics-1-6.jpg">
+            <div style="align-items: center;">Harry's Fitness</div>
+
+        </div>
+
+        <div class="mid">
+        <ul class="navbar">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">FitnessCalculator</a></li>
+            <li><a href="">Help</a></li>
+        </ul>
+        </div>
+
+        <div class="right">
+           <button class="btn">Email Us</button>
+           <button class="btn">Contact Us</button>
+        </div>
+    </header>
+    <div class="container">
+        
+           <h2 style="text-align: center; color: blue;">JOIN THE GYM OF KOCHI</h2>
+           <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Gender">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Locality">
+            </div>
+            <button class="btn" type="submit"><a href="transaction.html">Submit</a></button>
+           </form>
+           
+    </div>
+    
+</body>
+</html>
